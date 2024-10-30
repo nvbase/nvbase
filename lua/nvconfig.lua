@@ -1,29 +1,29 @@
 local options = {
-  base46 = {
-    theme = "onedark",
-    integrations = {},
-    changed_themes = {}
-  },
+	base46 = {
+		theme = "onedark",
+		integrations = {},
+		changed_themes = {},
+	},
 
-  ui = {
-    cmp = {
-      icons_left = false, -- only for non-atom styles!
-      lspkind_text = true,
-      style = "default",  -- default/flat_light/flat_dark/atom/atom_colored
-      format_colors = {
-        tailwind = false, -- will work for css lsp too
-        icon = "󱓻",
-      },
-    },
+	ui = {
+		cmp = {
+			icons_left = false, -- only for non-atom styles!
+			lspkind_text = true,
+			style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
+			format_colors = {
+				tailwind = true, -- will work for css lsp too
+				icon = "󱓻",
+			},
+		},
 
-    statusline = {
-      theme = "vscode_colored",
-      order = nil,
-      modules = nil,
-    }
-  },
+		statusline = {
+			theme = "vscode_colored",
+			order = nil,
+			modules = nil,
+		},
+	},
 
-  mason = { pkgs = {} }
+	mason = { pkgs = {} },
 }
 
 local status, chadrc = pcall(require, "chadrc")

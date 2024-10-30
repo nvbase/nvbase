@@ -1,8 +1,8 @@
 local map = vim.keymap.set
 
 map("n", "<leader>n", "<cmd>enew<CR>", { desc = "buffer new" })
-map("n", "<tab>", "<cmd> bnex <cr>", { desc = "Next Buffer" })
-map("n", "<S-tab>", "<cmd> bprevious <cr>", { desc = "Prev Buffer" })
+map("n", "<tab>", "<cmd> bnex <cr>", { desc = "next buffer" })
+map("n", "<S-tab>", "<cmd> bprevious <cr>", { desc = "prev buffer" })
 
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "general save file" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
@@ -16,7 +16,7 @@ map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 map("n", "<PageUp>", "<ESC>^i", { desc = "move beginning of line" })
 
 map("n", "<leader>fm", function()
-  require("conform").format { lsp_fallback = true }
+	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
 
 map("i", "<C-b>", "<ESC>^i", { desc = "move beginning of line" })
@@ -28,8 +28,8 @@ map("i", "<C-j>", "<Down>", { desc = "move down" })
 map("i", "<C-k>", "<Up>", { desc = "move up" })
 
 -- global lsp mappings
-map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
-map("n", "D", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
+map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
+map("n", "D", vim.diagnostic.open_float, { desc = "show diagnostic error messages" })
 
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
@@ -57,5 +57,5 @@ map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
 
 map("n", "<leader>wk", function()
-  vim.cmd("WhichKey " .. vim.fn.input "WhichKey: ")
+	vim.cmd("WhichKey " .. vim.fn.input("WhichKey: "))
 end, { desc = "whichkey query lookup" })
