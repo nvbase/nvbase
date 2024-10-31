@@ -13,9 +13,12 @@ local options = {
 
 	formatting = {
 		format = function(_, item)
+			local icons = require("nvbase.icons.lspkind")
+
 			item.abbr = item.abbr .. " "
 			item.menu = item.kind
 			item.menu_hl_group = "CmpItemKind" .. (item.kind or "")
+			item.kind = (icons[item.kind] or "") .. " "
 
 			return item
 		end,
