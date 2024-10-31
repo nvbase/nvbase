@@ -8,13 +8,8 @@ M.is_activewin = function()
 	return vim.api.nvim_get_current_win() == vim.g.statusline_winid
 end
 
-local orders = {
-	default = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor" },
-	vscode = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cursor", "cwd" },
-}
-
-M.generate = function(theme, modules)
-	local order = orders[theme]
+M.generate = function(modules)
+	local order = { "mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cursor", "cwd" }
 	local result = {}
 
 	for _, v in ipairs(order) do

@@ -36,5 +36,5 @@ M.cwd = function()
 end
 
 return function()
-	return utils.generate("statusline", M)
+	return utils.generate(M)
 end
