@@ -1,6 +1,10 @@
 {
   "diagnostics.globals": ["vim"],
     "diagnostics.disable": [
-        "need-check-nil"
+        "need-check-nil",
+        "param-type-mismatch",
+        "duplicate-set-field",
+        "inject-field",
+        "different-requires"
     ]
 }

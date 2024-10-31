@@ -44,5 +44,5 @@ autocmd("BufWritePost", {
 })
 
 vim.api.nvim_create_user_command("MasonInstallAll", function()
-	require("nvbase.ui.mason").install_all()
+	require("nvbase.mason").install_all()
 end, {})
