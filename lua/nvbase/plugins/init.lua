@@ -179,4 +179,16 @@ return {
 		event = "User FilePost",
 		opts = { signs = false },
 	},
+
+	{
+		"folke/trouble.nvim",
+		lazy = false,
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {
+			position = "right",
+		},
+		keys = {
+			{ "<leader>ds", "<cmd>Trouble diagnostics<cr>", desc = "trouble diagnostic loclist" },
+		},
+	},
 }

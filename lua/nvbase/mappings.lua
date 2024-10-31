@@ -28,7 +28,6 @@ map("i", "<C-j>", "<Down>", { desc = "move down" })
 map("i", "<C-k>", "<Up>", { desc = "move up" })
 
 -- global lsp mappings
-map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "lsp diagnostic loclist" })
 map("n", "D", vim.diagnostic.open_float, { desc = "lsp show diagnostic error messages" })
 
 -- Comment
