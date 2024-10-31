@@ -1,6 +1,7 @@
 local options = {
 	base46 = {
 		theme = "onedark",
+		changed_themes = {},
 	},
 }
 
