@@ -26,11 +26,19 @@ return {
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "User FilePost",
-		main = "ibl",
 		opts = {
-			indent = { char = "┊" },
-			scope = { highlight = { "Normal" } },
+			indent = { char = "┊", highlight = "IblChar" },
+			scope = { char = "│", highlight = "IblScopeChar" },
 		},
+		config = function(_, opts)
+			dofile(vim.g.base46_cache .. "blankline")
+
+			local hooks = require("ibl.hooks")
+			hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
+			require("ibl").setup(opts)
+
+			dofile(vim.g.base46_cache .. "blankline")
+		end,
 	},
 
 	-- file managing , picker etc
@@ -84,6 +92,14 @@ return {
 		cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
 		opts = function()
 			return require("nvbase.configs.mason")
+		end,
+	},
+
+	{
+		"neovim/nvim-lspconfig",
+		event = "User FilePost",
+		config = function()
+			require("nvbase.configs.lspconfig").defaults()
 		end,
 	},
 
