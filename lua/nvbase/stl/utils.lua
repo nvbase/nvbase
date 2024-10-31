@@ -14,15 +14,8 @@ local orders = {
 }
 
 M.generate = function(theme, modules)
-	local config = require("nvconfig").ui.statusline
-	local order = config.order or orders[theme]
+	local order = orders[theme]
 	local result = {}
-
-	if config.modules then
-		for key, value in pairs(config.modules) do
-			modules[key] = value
-		end
-	end
 
 	for _, v in ipairs(order) do
 		local module = modules[v]
